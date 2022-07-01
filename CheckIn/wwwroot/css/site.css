@@ -1,0 +1,87 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+div.container-clock {
+    color: indianred;
+}
+
+a.navbar-brand{
+    color:white;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+nav.navbar {
+    background-image: linear-gradient(200deg, #be5c5b 0, #b54e57 16.67%, #a8394f 33.33%, #961944 50%, #83003b 66.67%, #730036 83.33%, #670035 100%);
+}
+
+footer {
+    background-image: linear-gradient(200deg, #be5c5b 0, #b54e57 16.67%, #a8394f 33.33%, #961944 50%, #83003b 66.67%, #730036 83.33%, #670035 100%);
+}
+
+
+
+input.btn {
+    background-color: midnightblue;
+    color:white;
+     
+}
+
+.date-label{
+    font-weight: bold;
+    font-size: medium;
+}
+
+.dates{
+    background-color: white;
+    
+    border-radius: 5px;
+    color: black;
+    font-family: 'Yu Gothic';
+    border: solid;
+    border-color: indianred;
+}
+.navbar-toggler-icon {
+    
+}
+
+h1{
+    margin-top: 20px;
+}
+
+.row-color{
+    color: white;
+    background-image: linear-gradient(200deg, #be5c5b 0, #b54e57 16.67%, #a8394f 33.33%, #961944 50%, #83003b 66.67%, #730036 83.33%, #670035 100%);
+}
+
+.btn-search {
+    border: solid;
+    border-color: indianred;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-image: linear-gradient(200deg, #be5c5b 0, #b54e57 16.67%, #a8394f 33.33%, #961944 50%, #83003b 66.67%, #730036 83.33%, #670035 100%);
+}
+
+
+/*navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3*/
