@@ -12,5 +12,11 @@ namespace CheckIn.Models
         [Required]
         [Display(Name ="Puesto")]
         public string? Type { get; set; }
+        [Required]
+        [Display(Name = "N. Celular")]
+        public string? PhoneNumber { get; set; }
+        [Required]
+        [Display(Name = "Direccion")]
+        public string? Address { get; set; }
     }
 }

@@ -30,10 +30,20 @@ namespace CheckIn.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -67,11 +77,11 @@ namespace CheckIn.Migrations
 
             modelBuilder.Entity("CheckIn.Models.Registration", b =>
                 {
-                    b.HasOne("CheckIn.Models.Employee", "Employees")
+                    b.HasOne("CheckIn.Models.Employee", "Employee")
                         .WithMany()
                         .HasForeignKey("EmployeeId");
 
-                    b.Navigation("Employees");
+                    b.Navigation("Employee");
                 });
 #pragma warning restore 612, 618
         }
