@@ -1,0 +1,31 @@
+﻿@model CheckIn.Models.EmployeeType
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear nuevo tipo de empleado</h1>
+
+<h4>Tipo de empleado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Crear nuevo tipo" class="btn-search"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar al inicio</a>
+</div>
+

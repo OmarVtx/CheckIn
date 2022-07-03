@@ -1,0 +1,65 @@
+﻿@model CheckIn.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear nuevo empleado</h1>
+
+<h4>Empleado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Birthday" class="control-label"></label>
+                <input asp-for="Birthday" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GenderId" class="control-label"></label>
+                <select asp-for="GenderId" class ="form-control" asp-items="ViewBag.GenderId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeTypeId" class="control-label"></label>
+                <select asp-for="EmployeeTypeId" class ="form-control" asp-items="ViewBag.EmployeeTypeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkAreaId" class="control-label"></label>
+                <select asp-for="WorkAreaId" class ="form-control" asp-items="ViewBag.WorkAreaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="WarehouseId" class="control-label"></label>
+                <select asp-for="WarehouseId" class ="form-control" asp-items="ViewBag.WarehouseId"></select>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Crear empleado" class="btn-search"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar al inicio</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

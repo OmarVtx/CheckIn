@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CheckIn.Models.WorkArea>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Areas de trabajo</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-search text-white">Nuevo area de trabajo</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr class="row-color">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-warning text-white"  asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" class="btn btn-success text-white" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" class="btn btn-danger text-white" asp-route-id="@item.Id">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
