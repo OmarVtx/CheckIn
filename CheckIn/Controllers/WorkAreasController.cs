@@ -26,7 +26,6 @@ namespace CheckIn.Controllers
                           Problem("Entity set 'DatabaseContext.WorkArea'  is null.");
         }
 
-        // GET: WorkAreas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.WorkArea == null)
@@ -44,18 +43,14 @@ namespace CheckIn.Controllers
             return View(workArea);
         }
 
-        // GET: WorkAreas/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: WorkAreas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] WorkArea workArea)
+        public async Task<IActionResult> Create(WorkArea workArea)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +61,6 @@ namespace CheckIn.Controllers
             return View(workArea);
         }
 
-        // GET: WorkAreas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.WorkArea == null)
@@ -82,12 +76,9 @@ namespace CheckIn.Controllers
             return View(workArea);
         }
 
-        // POST: WorkAreas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] WorkArea workArea)
+        public async Task<IActionResult> Edit(int id, WorkArea workArea)
         {
             if (id != workArea.Id)
             {
@@ -117,7 +108,6 @@ namespace CheckIn.Controllers
             return View(workArea);
         }
 
-        // GET: WorkAreas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.WorkArea == null)
@@ -135,7 +125,6 @@ namespace CheckIn.Controllers
             return View(workArea);
         }
 
-        // POST: WorkAreas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

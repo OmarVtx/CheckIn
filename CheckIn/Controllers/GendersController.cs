@@ -18,7 +18,7 @@ namespace CheckIn.Controllers
             _context = context;
         }
 
-        // GET: Genders
+        
         public async Task<IActionResult> Index()
         {
               return _context.Gender != null ? 
@@ -26,7 +26,7 @@ namespace CheckIn.Controllers
                           Problem("Entity set 'DatabaseContext.Gender'  is null.");
         }
 
-        // GET: Genders/Details/5
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Gender == null)
@@ -44,18 +44,14 @@ namespace CheckIn.Controllers
             return View(gender);
         }
 
-        // GET: Genders/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Genders/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Gender gender)
+        public async Task<IActionResult> Create(Gender gender)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +62,6 @@ namespace CheckIn.Controllers
             return View(gender);
         }
 
-        // GET: Genders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Gender == null)
@@ -82,12 +77,9 @@ namespace CheckIn.Controllers
             return View(gender);
         }
 
-        // POST: Genders/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Gender gender)
+        public async Task<IActionResult> Edit(int id, Gender gender)
         {
             if (id != gender.Id)
             {
@@ -117,7 +109,6 @@ namespace CheckIn.Controllers
             return View(gender);
         }
 
-        // GET: Genders/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Gender == null)
@@ -135,7 +126,6 @@ namespace CheckIn.Controllers
             return View(gender);
         }
 
-        // POST: Genders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

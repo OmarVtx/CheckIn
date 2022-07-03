@@ -18,8 +18,6 @@ namespace CheckIn.Controllers
             _context = context;
         }
 
-        //// GET: Registrations
-
         public async Task<IActionResult> Index(DateTime? startDate = null, DateTime? endDate = null)
         {
 
